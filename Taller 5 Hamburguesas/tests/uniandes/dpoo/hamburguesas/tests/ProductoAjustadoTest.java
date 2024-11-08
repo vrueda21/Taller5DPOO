@@ -47,6 +47,17 @@ public class ProductoAjustadoTest {
         assertEquals(0, productoAjustado2.getPrecio( ), "El precio ajustado del producto no es el esperado." );
 
     }
+    
+    @Test
+    void testGenerarTextoFactura()
+    {
+    	String texto = productoAjustado1.generarTextoFactura();
+    	String precio = String.valueOf(productoAjustado1.getPrecio());
+    	
+    	assertTrue(texto.contains(precio), "La factura generada no contiene los datos esperados.");
+    	
+    }
+  
 	
 
 }

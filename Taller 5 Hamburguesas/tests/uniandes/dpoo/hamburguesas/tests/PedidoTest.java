@@ -2,6 +2,8 @@ package uniandes.dpoo.hamburguesas.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.File;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +18,7 @@ public class PedidoTest {
     @BeforeEach
     void setUp( ) throws Exception
     {
-        pedido1 = new Pedido("Valentina", "Carrera 57#79-361");
+        pedido1 = new Pedido("Valentina", "Carrera 57#79-360");
     }
 
     @AfterEach
@@ -31,9 +33,24 @@ public class PedidoTest {
     }
 
     @Test
-    void testGetCostoAdicional( )
+    void testGuardarFactura( ) throws Exception
     {
-        assertEquals( 1000, ingrediente1.getCostoAdicional( ), "El costo adicional del ingrediente no es el esperado." );
+    	try {
+    	//Given
+        File archivo = new File("data/pedidos.txt");
+
+    	
+    	//When
+        
+    	pedido1.guardarFactura(archivo);
+    	
+    	
+    	//Then
+    	assertTrue(archivo.exists(), "The file should be created.");
+    	
     }
+    	catch{new Exception(e Exception)
+    		
+    	}
 
 }
