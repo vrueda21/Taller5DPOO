@@ -33,7 +33,7 @@ public class PedidoTest {
     }
 
     @Test
-    void testGuardarFactura( ) throws Exception
+    void testGuardarFactura( )
     {
     	try {
     	//Given
@@ -49,8 +49,10 @@ public class PedidoTest {
     	assertTrue(archivo.exists(), "The file should be created.");
     	
     }
-    	catch{new Exception(e Exception)
+    	catch(Exception e) {
+    		System.out.println("Error creando el archivo.");
     		
     	}
 
+}
 }
